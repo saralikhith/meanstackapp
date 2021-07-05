@@ -1,0 +1,20 @@
+<div class="row  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-3">
+
+
+    <div class="col" *ngFor="let products of  prodobj">
+     
+      <div class="card">
+        <img src="{{products.profilePhoto}}" class="card-img-top"  height="200px" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{products.productname}}</h5>
+          <p class="card-text">{{products.description}}</p>
+          <button class="btn btn-danger float-end" *ngIf="login==='likhith'" (click)="onDelete(products)"><i class="fas fa-trash-alt me-1"></i>Delete</button>
+         
+          <button class="btn btn-danger float-end" *ngIf="login!=='likhith'" (click)="onProductSelection(products)"><i class="fas fa-cart-plus"></i>Add To Cart</button>
+
+       
+      </div>
+    </div>
+
+    </div>
+  </div>

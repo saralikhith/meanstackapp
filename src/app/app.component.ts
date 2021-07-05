@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nodejsConnection';
+  constructor(public us:UserService){
+          
+  }
+
+  onLogOut(){
+    localStorage.clear();
+   this.us.loginStatus=false
+  }
 }

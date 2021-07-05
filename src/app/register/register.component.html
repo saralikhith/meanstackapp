@@ -1,0 +1,57 @@
+
+<h1 class="text-center mt-3">Registration Form</h1>
+<hr class="text-white text-lg">
+
+
+<div class="row">
+<div class="col-md-3 col-sm-2">
+
+</div>
+<div class="col-lg-6 col-sm-8 col-12 mt-3">
+<form #ref="ngForm" (ngSubmit)="onClickSubmit(ref)">
+ <!-- <div class="d-flex-inline row">
+    <div class="form-floating col-lg-6 col-12">
+        <input type="text" class="form-control" id="exampleInput" placeholder="FirstName" name="FirstName" ngModel autocomplete="off">
+      <label for="exampleInput" >First Name</label>
+      </div>
+ 
+      <div class="form-floating mb-3 col-lg-6">
+        <input type="text" class="form-control" id="example" placeholder="LastName" name="LastName" ngModel autocomplete="off">
+      <label for="example" >Last Name</label>
+      </div>
+    </div> -->
+ 
+    <div class="form-floating mb-3 ">
+      <input type="text" class="form-control" id="example1" placeholder="LastName" name="username" ngModel>
+    <label for="example1" >User Name</label>
+    </div>
+    
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email" name="email" ngModel>
+      <label for="exampleInputEmail1" >Email address</label>
+    
+      
+    </div>
+       
+    <div class="form-floating mb-3">
+      <input type="date" class="form-control" id="examp" placeholder="date" name="dob" ngModel>
+    <label for="examp" >Date Of Birth</label>
+  
+    
+  </div>
+    <div class="mb-3 form-floating">
+        <input type="password" class="form-control" id="exampleInputPassword1"  placeholder="password" name="password" ngModel>
+      <label for="exampleInputPassword1" >Password</label>
+      
+    </div>
+  <input type="file" name="photo" ngModel class="form-control mb-2" (change)="selectFile($event)"> 
+
+    <button type="submit" class="btn btn-primary d-block mx-auto">Sign Up</button>
+  </form>
+</div>
+<div class="col-md-3 col-sm-2">
+
+</div>
+
+
+</div>

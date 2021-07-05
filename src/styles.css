@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+ 
+body{
+    background-image: url('https://raw.githubusercontent.com/rajeshThappeta/AngTestingApp/e306b7c35b7ec50d774be268f5ee5034335c8faa/src/assets/bg-2.svg');
+    background-size: 100% 100%;
+  
+background-attachment: fixed;
+    background-repeat: no-repeat;
+   
+
+    
+}

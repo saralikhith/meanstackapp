@@ -1,0 +1,27 @@
+<h5 class="text-end text-warning me-3 mt-2">welcome ,<span class="text-white">{{userObj.username}}</span> 
+<span>
+
+  
+</span>
+</h5>
+
+
+<div class="text-end text-white mt-2">
+    <p> {{userObj.email}}</p>
+ </div>
+ <button type="submit" class="btn btn-primary float-end " routerLink="passwordverification"  (click)="onClick()">change password</button>
+ <div class="container">
+ <ul class="nav nav-tabs  d-flex justify-content-evenly">
+  <li class="nav-item">
+    <a class="nav-link "  routerLink="viewproducts" routerLinkActive="active">viewProducts</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="addtocart" routerLinkActive="active">Cart</a>
+  </li>
+
+</ul>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
