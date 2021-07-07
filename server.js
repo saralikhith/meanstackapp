@@ -81,7 +81,7 @@ app.use((err,req,res,next)=>{
 
 
 //assign port number to server
-port=process.env.PORT;
-app.listen(3000,()=>{
+port=process.env.PORT || 8000;
+app.listen(port,()=>{
     console.log(`server listening to ${port}...`)
 })

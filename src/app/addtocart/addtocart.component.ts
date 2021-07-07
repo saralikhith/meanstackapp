@@ -13,14 +13,14 @@ cartObj
 
   ngOnInit(): void {
 
-  let  username=localStorage.getItem('username')
-    this.user.getProductsInCart(username).subscribe(
+
+    this.user.dataObservable.subscribe(
       res=>{
-                 if(res.message=='cart is empty'){
+                 if(res['message']=='cart is empty'){
                    alert('cart is empty')
                  }    
                  else{
-                   this.cartObj=res.message;
+                   this.cartObj=res;
                  }
       },
       err=>{

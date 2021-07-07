@@ -59,7 +59,9 @@ productApi.delete('/delete/:model',expressErrorHandler(async(req,res)=>{
 
            //delete in db
            await productcollection.deleteOne({model:mode})
-           res.send({message:'product deleted  successfully'})
+
+           let newProducts=await productcollection.find().toArray()
+           res.send({message:'product deleted  successfully',newProducts:newProducts})
 
 
 }))

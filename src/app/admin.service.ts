@@ -1,7 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,16 @@ import { Observable } from 'rxjs';
 export class AdminService {
 
   constructor(private hc:HttpClient) { }
+
+  dataSource=new BehaviorSubject(0);
+
+  dataObservable=this.dataSource.asObservable();
+
+  updateDataObservable(data){
+    this.dataSource.next(data)
+  }
+
+
 
   addProductstoProdCollection(prodobj):Observable<any>{
           return this.hc.post('/products/addproducts',prodobj)

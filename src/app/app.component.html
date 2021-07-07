@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ps-2 pe-2">
         <li class="nav-item">
-          <a class="nav-link  pe-2" routerLink="home" routerLinkActive="active">Home</a>
+          <a class="nav-link  pe-2" routerLink="home" routerLinkActive="active " *ngIf=!us.loginStatus>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  pe-2" routerLink="register" routerLinkActive="active">Register</a>
+          <a class="nav-link  pe-2" routerLink="register" routerLinkActive="active" *ngIf=!us.loginStatus>Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link  pe-2" routerLink="login" routerLinkActive="active" *ngIf=!us.loginStatus>Login</a>

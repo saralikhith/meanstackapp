@@ -223,14 +223,21 @@ userApi.post('/add-to-cart',expAsyncHandler(async(req,res)=>{
     
  //insert new cartobject to db
           await userCartCollectionObj.insertOne(newCartObj)
-          res.send({message:'new product added to cart'})
+
+          let latestData=await userCartCollectionObj.findOne({username:newProdObj.username})
+
+          res.send({message:'new product added to cart',latestData:latestData})
    }
    else{
       //push product obj to products array 
       userCartObj.products.push(newProdObj.prodObj)
       //update in database
       await userCartCollectionObj.updateOne({username:newProdObj.username},{$set:{...userCartObj}})
-      res.send({message:'new product added to cart'})
+
+
+      let latestData=await userCartCollectionObj.findOne({username:newProdObj.username})
+
+      res.send({message:'new product added to cart',latestData:latestData})
    }
 
 

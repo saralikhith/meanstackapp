@@ -16,7 +16,7 @@ export class ViewproductsComponent implements OnInit {
 
 login
   
-  prodobj=[];
+  prod
   ngOnInit(): void {
   
     this.login=localStorage.getItem('username')
@@ -25,10 +25,20 @@ login
     
              this.admin.getProducts().subscribe(
                res=>{
-                 this.prodobj=res.message;
-                 
+
+                 this.admin.updateDataObservable(res.message)
+                        
+             
+                 this.admin.dataObservable.subscribe(
+                  prodObj=>{
+                        
+                          this.prod=prodObj
+                  }
+                )
   
-                   },
+                   }   
+              
+                   ,
                err=>{
                  console.log(err)
                  alert('something went wrong in viewing the products')
@@ -40,9 +50,11 @@ login
             this.admin.onDelete(products.model).subscribe(
               res=>{
                 alert(res.message)
+                this.admin.updateDataObservable(res.newProducts)
               },
               err=>{
                 console.log(err.message)
+               
                 alert('something went wrong on deleting product')
               }
             )
@@ -57,6 +69,9 @@ login
    this.user.onSelectionOfProduct(selectedProdObj).subscribe(
      res=>{
                 alert(res.message)
+
+                this.user.updateDataObservable(res.latestData)
+
                 //navigate to cart
                 this.router.navigateByUrl(`userProfile/${username}/addtocart`)
 
